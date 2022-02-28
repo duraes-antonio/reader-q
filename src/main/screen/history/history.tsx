@@ -1,6 +1,7 @@
 import { View } from 'react-native';
-import { History, HistoryListProps } from './history-item';
-import { Screen } from '../screen';
+import { Screen } from '../../../ui/components/screen';
+import { HistoryList } from '../../../ui/components/history/history-list';
+import { HistoryListProps } from '../../../ui/components/history/history-item';
 
 export function HistoryScreen(): JSX.Element {
     const data: HistoryListProps = {
@@ -22,7 +23,7 @@ export function HistoryScreen(): JSX.Element {
                     alignItems: 'center',
                 }}
             >
-                <History payload={data} />
+                <HistoryList payload={data} />
             </View>
         </Screen>
     );

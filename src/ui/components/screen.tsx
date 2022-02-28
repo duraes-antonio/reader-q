@@ -5,6 +5,7 @@ const screenStyles = StyleSheet.create({
     screen: {
         backgroundColor: 'white',
         flex: 1,
+        paddingHorizontal: 16,
     },
 });
 

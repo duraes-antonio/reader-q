@@ -2,7 +2,7 @@ import { StyleSheet, TouchableOpacity, View } from 'react-native';
 import { Routes } from '../routes';
 import { BottomTabBarProps } from '@react-navigation/bottom-tabs';
 import { MaterialCommunityIcons } from '@expo/vector-icons';
-import { colors } from '../style/color';
+import { colors } from '../../ui/style/color';
 
 const tabBarStyles = StyleSheet.create({
     container: {

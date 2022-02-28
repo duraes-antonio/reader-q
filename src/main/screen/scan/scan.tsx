@@ -1,5 +1,5 @@
 import { Text, View } from 'react-native';
-import { Screen } from '../screen';
+import { Screen } from '../../../ui/components/screen';
 
 export function ScanScreen(): JSX.Element {
     return (
