@@ -10,13 +10,10 @@ const tabBarStyles = StyleSheet.create({
         borderRadius: 45,
         elevation: 8,
         shadowColor: 'rgba(0, 0, 0, 0.3)',
-
         height: 48,
         width: 242,
-
         position: 'absolute',
         bottom: 32,
-
         flexDirection: 'row',
         alignItems: 'center',
         alignSelf: 'center',
@@ -69,6 +66,7 @@ export function CustomTabBar(props: BottomTabBarProps) {
                         onPress={onPress}
                         onLongPress={onLongPress}
                         style={tabBarStyles.item}
+                        key={route.name}
                     >
                         <MaterialCommunityIcons
                             color={iconColor}
