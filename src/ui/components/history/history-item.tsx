@@ -2,6 +2,8 @@ import { HistoryItem } from '../../../models/history-item';
 import { StyleSheet, Text, View } from 'react-native';
 import { colors } from '../../style/color';
 import { MaterialCommunityIcons } from '@expo/vector-icons';
+import { ButtonType, CircleButton } from '../button';
+import dayjs from 'dayjs';
 
 export interface HistoryListProps {
     data: HistoryItem[];
@@ -23,6 +25,7 @@ const historyStyles = StyleSheet.create({
     },
     itemTextContainer: {
         marginLeft: 12,
+        flex: 1,
     },
     itemTitle: {
         color: colors.textTitle,
@@ -47,8 +50,16 @@ export function HistoryItemCard(props: { data: HistoryItem }) {
                     {props.data.content}
                 </Text>
                 <Text style={historyStyles.itemContent}>
-                    {props.data.date.toLocaleString()}
+                    {dayjs(props.data.date).format('DD/MM/YYYY HH:mm:ss')}
                 </Text>
+            </View>
+
+            <View style={{ flexDirection: 'row' }}>
+                <CircleButton
+                    style={{ marginRight: 8 }}
+                    type={ButtonType.Copy}
+                />
+                <CircleButton type={ButtonType.Open} />
             </View>
         </View>
     );
