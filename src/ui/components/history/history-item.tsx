@@ -29,13 +29,15 @@ const historyStyles = StyleSheet.create({
     },
     itemTitle: {
         color: colors.textTitle,
+        fontFamily: 'Quicksand_500Medium',
     },
     itemContent: {
         color: colors.textDescription,
+        fontFamily: 'Quicksand_500Medium',
     },
 });
 
-export function HistoryItemCard(props: { data: HistoryItem }) {
+export function HistoryItemCard(props: { data: HistoryItem }): JSX.Element {
     return (
         <View style={historyStyles.item}>
             <MaterialCommunityIcons
@@ -46,7 +48,7 @@ export function HistoryItemCard(props: { data: HistoryItem }) {
             />
             <View style={historyStyles.itemTextContainer}>
                 <Text style={historyStyles.itemTitle}>{props.data.title}</Text>
-                <Text style={historyStyles.itemContent}>
+                <Text style={[historyStyles.itemContent]}>
                     {props.data.content}
                 </Text>
                 <Text style={historyStyles.itemContent}>
