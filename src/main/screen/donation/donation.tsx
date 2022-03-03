@@ -55,6 +55,7 @@ export function DonationScreen(): JSX.Element {
                 <TouchableOpacity
                     onPress={copyToClipboard}
                     style={styles.buttonCopyKeyDonate}
+                    activeOpacity={1 / 2}
                 >
                     <MaterialCommunityIcons
                         color="white"

@@ -6,7 +6,7 @@ import {
 } from '@expo-google-fonts/quicksand';
 import { Text } from 'react-native';
 
-export default function App() {
+export default function App(): JSX.Element {
     const [fontsLoaded] = useFonts({
         Quicksand_500Medium,
         Quicksand_600SemiBold,
