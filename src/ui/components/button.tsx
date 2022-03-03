@@ -15,7 +15,7 @@ export const enum ButtonType {
 }
 
 const iconByType: { [key in ButtonType]: string } = {
-    [ButtonType.CameraFlip]: 'camera-flip',
+    [ButtonType.CameraFlip]: 'camera-switch',
     [ButtonType.Copy]: 'content-copy',
     [ButtonType.FlashOff]: 'lightbulb-off',
     [ButtonType.FlashOn]: 'lightbulb-on',
@@ -33,23 +33,30 @@ const buttonStyles = StyleSheet.create({
         elevation: 8,
         shadowColor: 'rgba(0, 0, 0, 0.94)',
     },
+    buttonMedium: {
+        height: 40,
+        width: 40,
+    },
 });
 
 export interface ButtonProps extends TouchableOpacityProps {
     type: ButtonType;
+    size?: 'm' | 's';
 }
 
 function _CircleButton(props: ButtonProps & { iconName: string }) {
+    const styles = [
+        buttonStyles.button,
+        props.style,
+        props.size === 'm' ? buttonStyles.buttonMedium : undefined,
+    ];
     return (
-        <TouchableOpacity
-            activeOpacity={1 / 2}
-            style={[props.style, buttonStyles.button]}
-        >
+        <TouchableOpacity {...props} activeOpacity={1 / 2} style={styles}>
             <MaterialCommunityIcons
                 color="white"
                 /* @ts-ignore */
                 name={props.iconName}
-                size={16}
+                size={props.size === 'm' ? 24 : 16}
             />
         </TouchableOpacity>
     );
